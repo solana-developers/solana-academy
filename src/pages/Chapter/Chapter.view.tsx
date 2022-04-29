@@ -247,17 +247,13 @@ export const ChapterView = ({
   const matchesMobile = useMediaQuery('(max-width: 768px)')
   const matchesTablet = useMediaQuery('(max-width: 1300px)')
   const matchesLarge = useMediaQuery('(min-width: 1920px)')
+  const showQuiz = questions.length > 0 || (solution !== '');
 
   useEffect(() => {
     
     setTimeout(() => {
-      if (nextChapter === '/solana101/splash-3') {
-        document.body.style.overflow = "hidden";
-        setIsShowPopup(true)
-      } else {
-        document.body.style.overflow = "scroll";
-        setIsShowPopup(false)
-      }
+      document.body.style.overflow = "scroll";
+      setIsShowPopup(false)
     }, 4000)
   }, [nextChapter])
 
@@ -282,14 +278,14 @@ export const ChapterView = ({
   return (
     <div>
       <ChapterStyled>
-        <ChapterCourse>
+        <ChapterCourse isQuiz={showQuiz}>
           <Header inChapter />
           <Progress percent={percent} />
           <ChapterContentWrapp>
             <Content course={course || ''} />
           </ChapterContentWrapp>
         </ChapterCourse>
-        <ChapterFixed>
+        { (showQuiz) ? (<ChapterFixed>
           {Object.keys(supports).length > 0 && (
             <div>
               <ChapterTab isSelected={display === 'solution'} onClick={() => setDisplay('solution')}>
@@ -302,7 +298,7 @@ export const ChapterView = ({
               ))}
             </div>
           )}
-          {questions.length > 0 && nextChapter !== '/solana101/chapter-8' ? (
+          {questions.length > 0 ? (
             <Wrapp>
               <div>
                 <ChapterQuestions>
@@ -365,7 +361,7 @@ export const ChapterView = ({
                 </MonacoContainer>
             </MonacoWrrap>
           )}
-        </ChapterFixed>
+        </ChapterFixed>) : ''}
       </ChapterStyled>
     </div>
   )

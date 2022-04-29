@@ -16,7 +16,7 @@ export type CourseData = {
 
 export const Course = () => {
   // bandaid
-  const course = 'solana101'
+  const course = 'web3'
 
   return (
     <>

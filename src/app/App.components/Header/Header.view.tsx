@@ -29,7 +29,7 @@ export const HeaderView = ({inChapter}: HeaderViewProps) => {
                         'nav-wrapp',
                         inChapter && 'inChapter'
                     )}>
-                    <Link className={'get-started'} to="/solana101/chapter-1">
+                    <Link className={'get-started'} to="/web3/chapter-1">
                         <Button text="Start learning" color="primary"/>
                     </Link>
                 </div>

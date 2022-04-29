@@ -13,12 +13,12 @@ export const ChapterDrawer = () => {
   const showingChapter = useSelector((state: State) => state.chapterDrawer && state.chapterDrawer.showingChapter)
   const { pathname } = useLocation()
 
-  let defaultCourse: Option = { name: 'Solana 101', path: 'solana101' }
+  let defaultCourse: Option = { name: 'Solana 101', path: 'web3' }
   const [activeCourse, setActiveCourse] = useState(defaultCourse)
 
   function changeCourseCallback(e: Option) {
-    if (e.path === 'solana101') {
-      setActiveCourse({ name: 'Solana 101', path: 'solana101' })
+    if (e.path === 'web3') {
+      setActiveCourse({ name: 'Solana 101', path: 'web3' })
     }
     if (e.path === 'solana102') {
       setActiveCourse({ name: 'Solana 102', path: 'solana102' })

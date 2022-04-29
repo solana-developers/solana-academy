@@ -5,6 +5,6 @@ import data from '!raw-loader!./module.md'
 import { Course } from '../../Course/Course.controller'
 
 export const course: Course = {
-    path: "solana101",
+    path: "web3",
     description: data
 }

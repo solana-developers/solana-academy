@@ -6,7 +6,7 @@ import {useLocation} from 'react-router-dom'
 import {CourseData} from '../Course/Course.controller'
 
 import {chaptersByCourse, courseData} from '../Course/Course.data'
-import {chapterData} from '../Courses/solana101/Chapters/Chapters.data'
+import {chapterData} from '../Courses/web3/Chapters/Chapters.data'
 
 import {PENDING, RIGHT, WRONG} from './Chapter.constants'
 
@@ -84,7 +84,7 @@ export const Chapter = () => {
   })
 
   const validateCallback = () => {
-    if (pathname === '/solana101/chapter-8') {
+    if (pathname === '/web3/chapter-8') {
       setValidatorState(RIGHT)
       return
     }
@@ -134,7 +134,7 @@ export const Chapter = () => {
             data.solution.replace(/\s+|\/\/ Type your solution below/g, '')
           ) {
             setValidatorState(RIGHT)
-          } else if (pathname === '/solana101/chapter-3' && data.exercise.match(/^[a-z0-9_-]*.testnet/gm)) {
+          } else if (pathname === '/web3/chapter-3' && data.exercise.match(/^[a-z0-9_-]*.testnet/gm)) {
             setShowDiff(false)
             setValidatorState(RIGHT)
           } else setValidatorState(WRONG)

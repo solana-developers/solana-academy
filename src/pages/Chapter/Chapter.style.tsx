@@ -10,8 +10,10 @@ export const ChapterStyled = styled.div`
     flex-direction: column;
   }
 `
-export const ChapterCourse = styled.div`
-  max-width: calc(660px + (960 - 660) * ((100vw - 1300px) / (1920 - 1300)));
+export const ChapterCourse =  styled.div<{ isQuiz?: boolean }>`
+  ${({ isQuiz }) => isQuiz && `
+    max-width: calc(660px + (960 - 660) * ((100vw - 1300px) / (1920 - 1300)));
+  `}
   width: 100%;
 
   @media (max-width: 1300px) {
@@ -19,15 +21,19 @@ export const ChapterCourse = styled.div`
   }
 
   @media (min-width: 1920px) {
-    max-width: calc(960px + (960 - 660)*((100vw - 1920px) / (1920 - 960)));
+    ${({ isQuiz }) => isQuiz && `
+      max-width: calc(960px + (960 - 660)*((100vw - 1920px) / (1920 - 960)));
+    `}
   }
 
   @media (min-width: 2300px) {
-    max-width: calc(960px + (960 - 660)*((100vw - 1820px) / (1820 - 960)))
+    ${({ isQuiz }) => isQuiz && `
+      max-width: calc(960px + (960 - 660)*((100vw - 1820px) / (1820 - 960)))
+    `}
   }
 `
 export const ChapterContentWrapp = styled.div`
-  max-width: 860px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px 60px;

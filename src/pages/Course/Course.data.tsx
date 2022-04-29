@@ -1,13 +1,13 @@
-import { course as solana101 } from '../Courses/solana101'
-import { chapterData as solana101Chapters } from '../Courses/solana101/Chapters/Chapters.data'
+import { course as web3 } from '../Courses/web3'
+import { chapterData as web3Chapters } from '../Courses/web3/Chapters/Chapters.data'
 import { CourseData } from './Course.controller'
 
 export const courseData: CourseData[] = [
   {
-    path: solana101.path,
-    pathname: `/${solana101.path}/info`,
+    path: web3.path,
+    pathname: `/${web3.path}/info`,
     name: 'Solana 101',
-    data: solana101,
+    data: web3,
   },
 ]
 
@@ -18,5 +18,5 @@ type ChapterDataDictionary = {
 }
 
 export const chaptersByCourse: ChapterDataDictionary = {
-  solana101: solana101Chapters,
+  web3: web3Chapters,
 }

@@ -1,6 +1,6 @@
 import { Button } from 'app/App.components/Button/Button.controller'
 // band-aid hardcode import. fix later.
-// import { chapterData } from 'pages/Courses/solana101/Chapters/Chapters.data'
+// import { chapterData } from 'pages/Courses/web3/Chapters/Chapters.data'
 import * as React from 'react'
 import { useLocation } from 'react-router-dom'
 import ProgressBar from '@ramonak/react-progress-bar'
@@ -27,7 +27,7 @@ export const FooterView = ({ nextChapter, previousChapter, percent }: any) => {
     <FooterStyled>
       <Link to={previousChapter}>
         <Button
-          text={pathname !== '/solana101/chapter-1' ? 'Previous' : 'Go to Home'}
+          text={pathname !== '/web3/chapter-1' ? 'Previous' : 'Go to Home'}
           color="primary"
           icon="left-arrow"
           invertIcon
@@ -38,7 +38,7 @@ export const FooterView = ({ nextChapter, previousChapter, percent }: any) => {
       </ProgressBarWrapper>
       <Link to={nextChapter}>
         <Button
-          text={pathname !== '/solana101/chapter-8' ? 'Next' : 'Get certificate'}
+          text={pathname !== '/web3/chapter-8' ? 'Next' : 'Get certificate'}
           color="primary"
           icon="right-arrow"
         />

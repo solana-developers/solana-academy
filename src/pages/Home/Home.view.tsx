@@ -24,7 +24,7 @@ export const HomeView = () => {
               <p className={'text'}>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
               <p className={'text'}>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
-              <Link className={'get-started'} to="/solana101/chapter-1">
+              <Link className={'get-started'} to="/web3/chapter-1">
                 <Button text="Start Learning" color="primary"/>
               </Link>
             </div>
